@@ -1,19 +1,4 @@
-# Wefunder Email Microservice
-
-
-**Setting up a dev environment**:
-```
-$ cp .env-example .env
-$ heroku git:remote -a wefunder-email-microservice
-```
-
-If you want to test actual email sending, get a test API key from SendWithUs and add it to .env as `SWU_API_KEY`. 
-
-To deploy your code to Heroku, commit to master and then run:
-
-```
-$ git push heroku master
-```
+# Wf Email Microservice
 
 **Starting up the server**:
 
