@@ -1,0 +1,40 @@
+syntax = "proto3";
+package email_microservice;
+option go_package = ".;wfprotobuf";
+
+message User {
+    uint32 id = 1;
+    string first_name = 2;
+    string full_name = 3;
+    string auto_login_token = 4;
+    string email = 5;
+}
+
+message EmailList {
+    repeated User users = 1;
+    string template_id = 2;
+}
+
+message EmailResponse {
+    repeated uint32 successful_users = 1;
+    repeated uint32 errored_users = 2;
+}
+
+message Webhook {
+    uint64 timestamp = 1;
+    string token = 2;
+    string signature = 3;
+    string swu_template_version_id = 4;
+    string domain = 5;
+    string receipt_id = 6;
+    string swu_template_id = 7;
+    uint64 event_timestamp = 8;
+    string message_id = 9;
+    string recipient = 10;
+    string event = 11;
+    string body_plain = 12;
+}
+
+message WebhookBatch {
+    repeated Webhook webhooks = 1;
+}
